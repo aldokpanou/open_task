@@ -6,7 +6,7 @@ export class FetchTaskDto {
   @ApiProperty({
     description: 'Recherche de tâches par titre ou description',
     example: 'Votre recherche',
-    required: false
+    required: false,
   })
   @IsOptional()
   @IsString()
@@ -17,7 +17,7 @@ export class FetchTaskDto {
     enum: TaskStatus,
     isArray: false,
     example: [TaskStatus.IN_PROGRESS],
-    required: false
+    required: false,
   })
   @IsOptional()
   @IsIn(Object.values(TaskStatus), { each: true })
@@ -28,10 +28,9 @@ export class FetchTaskDto {
     enum: TaskPriority,
     isArray: false,
     example: TaskPriority.HIGH,
-    required: false
+    required: false,
   })
   @IsOptional()
   @IsIn(Object.values(TaskPriority))
   priority?: TaskPriority;
 }
-
