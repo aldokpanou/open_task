@@ -20,29 +20,45 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @ApiOperation({
-    summary: `Get transactions history`,
-    description: `Get transactions history  \n **{accountId}** is the id of the merchant business account.  \n It's the **id** inside **developerAccounts** of **/v1.0/auth/me** response.`,
+    summary: 'Créer une tâche',
+    description: 'Créer une nouvelle tâche avec les détails fournis.',
   })
   @Post()
   create(@Body() createTaskDto: CreateTaskDto) {
     return this.tasksService.create(createTaskDto);
   }
 
+  @ApiOperation({
+    summary: 'Obtenir toutes les tâches',
+    description: 'Obtenir la liste de toutes les tâches en fonction des filtres fournis.',
+  })
   @Get()
   findAll(@Query() fetchtaskDto: FetchTaskDto) {
     return this.tasksService.findAll(fetchtaskDto);
   }
 
+  @ApiOperation({
+    summary: 'Obtenir une tâche par ID',
+    description: 'Obtenir les détails d\'une tâche en spécifiant son identifiant.',
+  })
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.tasksService.findOne(id);
   }
 
+  @ApiOperation({
+    summary: 'Modifier une tâche',
+    description: 'Modifier les détails d\'une tâche en spécifiant son identifiant et les nouvelles données.',
+  })
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     return this.tasksService.update(id, updateTaskDto);
   }
 
+  @ApiOperation({
+    summary: 'Supprimer une tâche',
+    description: 'Supprimer une tâche en spécifiant son identifiant.',
+  })
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.tasksService.remove(id);

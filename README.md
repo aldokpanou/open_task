@@ -34,5 +34,4 @@ Un projet de gestion des tâches développé avec NestJS, un framework pour Node
 ## Contributions
 Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez ouvrir une issue pour discuter des changements que vous souhaitez apporter.
 
-## Licence
-Ce projet est sous licence MIT.
+

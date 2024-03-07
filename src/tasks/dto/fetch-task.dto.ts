@@ -16,12 +16,12 @@ export class FetchTaskDto {
     description: 'Statut de la tâche',
     enum: TaskStatus,
     isArray: false,
-    example: [TaskStatus.IN_PROGRESS],
+    example: TaskStatus.IN_PROGRESS,
     required: false,
   })
   @IsOptional()
-  @IsIn(Object.values(TaskStatus), { each: true })
-  status?: TaskStatus[];
+  @IsIn(Object.values(TaskStatus))
+  status?: TaskStatus;
 
   @ApiProperty({
     description: 'Priorité de la tâche',

@@ -27,9 +27,7 @@ export class TasksService {
     }
 
     if (status) {
-      statusCriteria.status = {
-        in: status,
-      };
+      statusCriteria.status = status;
     }
 
     if (q) {
